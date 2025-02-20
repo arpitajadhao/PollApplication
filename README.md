@@ -28,16 +28,16 @@ git clone https://github.com/arpitajadhao/PollApplication.git
 5. Create Superuser (For Admin Panel Access) python manage.py createsuperuser
 6. Run the Server python manage.py runserver Access the app at http://127.0.0.1:8000/ and the admin panel at http://127.0.0.1:8000/admin/.
 
-🔐 User Registration & Authentication
+-** ##🔐 User Registration & Authentication**
 The app allows users to register and log in using Django's authentication system.
 Only authenticated users can vote in polls and view results.
 After registering, users are automatically logged in and redirected to the polls index page.
 
-🎨 UI Design
+**🎨 UI Design**
 The application uses Bootstrap for a modern and responsive user interface.
 Clean and intuitive design for better usability and accessibility.
 
-📜 License
+**📜 License**
 This project is licensed under the MIT License.
 
 
