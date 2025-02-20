@@ -1,0 +1,26 @@
+{% extends "polls/base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card poll-card p-4">
+        <h2 class="text-center">Login</h2>
+        {% if form.errors %}
+            <p class="alert alert-danger text-center">Invalid username or password.</p>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_username" class="form-label">Username:</label>
+                <input type="text" name="username" id="id_username" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="id_password" class="form-label">Password:</label>
+                <input type="password" name="password" id="id_password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "polls/base.html" %}
+
+{% block title %}Poll Results{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="card poll-card p-4">
+            <h2 class="text-center">{{ question.question_text }}</h2>
+            <ul class="list-group">
+                {% for choice in question.choice_set.all %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{ choice.choice_text }}
+                        <span class="badge bg-primary rounded-pill">{{ choice.votes }} votes</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <p class="alert alert-warning text-center">You need to <a href="{% url 'login' %}?next={{ request.path }}">log in</a> to see poll results.</p>
+    {% endif %}
+{% endblock %}
